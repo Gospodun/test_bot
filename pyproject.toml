@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "testbot"
+version = "0.1"
+description = "Test bot"
+authors = ["None"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyrogram = "^2.0.106"
+click = "^8.1.7"
+toml = "^0.10.2"
+tgcrypto = "^1.2.5"
+asyncpg = "^0.29.0"
+apscheduler = "^3.10.4"
+loguru = "^0.7.2"
+pylint = "^3.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
