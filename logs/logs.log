@@ -382,3 +382,7 @@
 2023-11-22 13:18:20.581 | INFO     | app:main:13 - testbot started
 2023-11-22 13:18:20.582 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
 2023-11-22 13:18:20.592 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
+2023-11-22 13:28:13.721 | INFO     | app:main:13 - testbot started
+2023-11-22 13:28:13.721 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
+2023-11-22 13:28:13.739 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
+2023-11-22 13:28:38.864 | INFO     | telegram_bot.telegram_bot_service:_hand_mes:107 - Successfully send message to admin with command: /users_today
