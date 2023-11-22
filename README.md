@@ -16,6 +16,9 @@ https://docs.google.com/spreadsheets/u/0/d/1xsE6GG-HXQ4LES_E1838nwsLgelUaghUrrsZ
 ```export TELEGRAM_API_HASH=<Ваш API HASH>```
 
 ```export PG_CONNECTION=<Ссылка доступа к Postgres>``` (postgres://postgres@localhost/test_base)
+
+БД работает от имени postgres без пароля в базе test_base
+
 ## 4. Запуск бота
 ```poetry run python main.py```
 
