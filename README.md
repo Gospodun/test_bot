@@ -22,6 +22,7 @@ https://docs.google.com/spreadsheets/u/0/d/1xsE6GG-HXQ4LES_E1838nwsLgelUaghUrrsZ
 ## 4. Запуск бота
 ```poetry run python main.py```
 
+! Воронка не работает в личных сообщениях с самим собой !
 ## Зависимости
 Все зависимости указаны в pyproject.toml
 
