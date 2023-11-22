@@ -47,8 +47,10 @@ class TelegramBotService:
         await self._client.start()
 
     async def job(self):
-        users = await self._db.get_users()
-
+        try:
+            users = await self._db.get_users()
+        except:
+            return
         if not users:
             return
 
@@ -63,7 +65,7 @@ class TelegramBotService:
                     f'Successfully send message to {user["tg_id"]}: {mes}')
 
                 await self._db.change_status(user['tg_id'], 'second')
-            if user['status'] == 'second' and diff >= 90:
+            elif user['status'] == 'second' and diff >= 90:
                 mes = 'Подготовила для вас материал'
                 photo = 'https://mimigram.ru/wp-content/uploads/2020/07/%D0%A7%D1%82%D0%BE-%D1%82%D0%B0%D0%BA%D0%BE%D0%B5-%D1%84%D0%BE%D1%82%D0%BE.jpeg'  # pylint: disable=line-too-long
 
@@ -76,14 +78,22 @@ class TelegramBotService:
                     f'Successfully send photo to {user["tg_id"]}: {photo}')
 
                 await self._db.change_status(user['tg_id'], 'last')
-            if user['status'] == 'last' and diff >= 120:
-                mes = 'Скоро вернусь с новым материалом!'
-                await self._client.send_message(user['tg_id'], mes)
+            elif user['status'] == 'last' and diff >= 120:
+                end = False
+                async for message in self._client.get_chat_history(user['tg_id']):
+                    if message.text == 'Хорошего дня' and message.from_user.id == self._config.adm_id:
+                        end = True
 
-                logger.info(
-                    f'Successfully send message to {user["tg_id"]}: {mes}')
+                if not end:
+                    mes = 'Скоро вернусь с новым материалом!'
+                    await self._client.send_message(user['tg_id'], mes)
 
-                await self._db.change_status(user['tg_id'], 'start')
+                    logger.info(
+                        f'Successfully send message to {user["tg_id"]}: {mes}')
+
+                    await self._db.change_status(user['tg_id'], 'start')
+                else:
+                    await self._db.change_status(user['tg_id'], 'end')
 
     async def start_sheduler(self):
         scheduler = AsyncIOScheduler()
@@ -93,17 +103,16 @@ class TelegramBotService:
 
     async def _hand_mes(self, client, message):
         if message.from_user:
-            print(message)
-            user = await self._db.get_user(message.chat.id)
+            user = await self._db.get_user(message.from_user.id)
 
-            if not user:
-                await self._db.add_user(message.chat.id)
+            if not user and message.from_user.id != self._config.adm_id:
+                await self._db.add_user(message.from_user.id)
             if message.chat.id == self._config.adm_id and message.text == '/users_today':
                 len_today_users = await self._db.get_users_today()
 
                 await client.send_message(
                     'me',
-                    f'Количество пользоватей, зарегестрированных сегодня: {len_today_users}'
+                    f'Количество пользоватей, зарегистрированных сегодня: {len_today_users}'
                 )
                 logger.info(
                     f'Successfully send message to admin with command: {message.text}')
