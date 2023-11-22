@@ -53,6 +53,7 @@ class TelegramBotService:
 
         for user in users:
             diff = (datetime.now() - user['last_date']).total_seconds() / 60
+
             if user['status'] == 'start' and diff >= 10:
                 mes = 'Добрый день!'
                 await self._client.send_message(user['tg_id'], mes)
@@ -91,6 +92,7 @@ class TelegramBotService:
 
     async def _hand_mes(self, client, message):
         if message.from_user:
+            print(message)
             user = await self._db.get_user(message.chat.id)
 
             if not user:

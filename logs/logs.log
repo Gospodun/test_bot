@@ -360,3 +360,25 @@
 2023-11-22 13:06:57.336 | INFO     | app:main:13 - testbot started
 2023-11-22 13:06:57.337 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
 2023-11-22 13:06:57.350 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
+2023-11-22 13:15:28.970 | INFO     | app:main:13 - testbot started
+2023-11-22 13:15:28.970 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
+2023-11-22 13:15:28.982 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
+2023-11-22 13:16:04.525 | INFO     | app:main:13 - testbot started
+2023-11-22 13:16:04.525 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
+2023-11-22 13:16:04.541 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
+2023-11-22 13:16:28.622 | INFO     | app:main:13 - testbot started
+2023-11-22 13:16:28.622 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
+2023-11-22 13:16:28.633 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
+2023-11-22 13:16:58.155 | INFO     | app:main:13 - testbot started
+2023-11-22 13:16:58.155 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
+2023-11-22 13:16:58.167 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
+2023-11-22 13:17:12.790 | INFO     | app:main:13 - testbot started
+2023-11-22 13:17:12.791 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
+2023-11-22 13:17:12.801 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
+2023-11-22 13:17:29.445 | INFO     | app:main:13 - testbot started
+2023-11-22 13:17:29.445 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
+2023-11-22 13:17:29.456 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
+2023-11-22 13:17:48.123 | INFO     | telegram_bot.telegram_bot_service:_hand_mes:107 - Successfully send message to admin with command: /users_today
+2023-11-22 13:18:20.581 | INFO     | app:main:13 - testbot started
+2023-11-22 13:18:20.582 | INFO     | app:main:14 - PostgreSQL connection postgres://postgres@localhost/test_base
+2023-11-22 13:18:20.592 | INFO     | telegram_bot.telegram_bot_service:run_bot_task:42 - Bot polling started
